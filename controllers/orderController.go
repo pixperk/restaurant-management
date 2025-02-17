@@ -34,13 +34,7 @@ func GetOrders() gin.HandlerFunc {
 			return
 		}
 
-		if len(allOrders) == 0 {
-			c.JSON(http.StatusOK, gin.H{"message": "No orders found"})
-			return
-		}
-
-		// Return the first result
-		c.JSON(http.StatusOK, allOrders[0])
+		c.JSON(http.StatusOK, allOrders)
 
 	}
 }
